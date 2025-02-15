@@ -1,0 +1,125 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { Talk, Speaker } from "@/types";
+import ProgramSlotModal from "./ProgramSlotModal";
+import SpeakerProfileModal from "./SpeakerProfileModal";
+import { program, getTalkSpeakers, getSpeakerTalks } from "@/data/program";
+
+interface ProgramProps {
+  onTalkClick: (talk: Talk) => void;
+}
+
+const days = [
+  { date: "May 26", day: "Day 1" },
+  { date: "May 27", day: "Day 2" },
+  { date: "May 28", day: "Day 3" },
+];
+
+export default function Program({ onTalkClick }: ProgramProps) {
+  const [activeDay, setActiveDay] = useState("Day 1");
+  const [selectedTalk, setSelectedTalk] = useState<Talk | null>(null);
+  const [selectedSpeaker, setSelectedSpeaker] = useState<Speaker | null>(null);
+
+  const handleTalkClick = (talk: Talk) => {
+    setSelectedTalk(talk);
+  };
+
+  const handleSpeakerClick = (speaker: Speaker) => {
+    setSelectedTalk(null);
+    setSelectedSpeaker(speaker);
+  };
+
+  return (
+    <section id="program" className="py-20">
+      <div className="max-w-6xl mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="backdrop-blur-md bg-black/40 rounded-xl p-8"
+        >
+          <h2 className="text-3xl font-bold mb-12 text-center text-white">
+            Conference Program
+          </h2>
+
+          <div className="flex justify-center mb-8">
+            {days.map((day) => (
+              <button
+                key={day.day}
+                onClick={() => setActiveDay(day.day)}
+                className={`px-6 py-2 mx-2 rounded-full transition-colors border border-white/10 hover:scale-110 transition-all transition-colors duration-500 ease-in-out ${
+                  activeDay === day.day
+                    ? "bg-black/50 text-white border border-white/80"
+                    : "bg-black/20 text-white/80 hover:bg-black/30"
+                }`}
+              >
+                {day.date}
+              </button>
+            ))}
+          </div>
+
+          <div className="space-y-4">
+            {program[activeDay]?.map((talk, index) => (
+              <div
+                key={index}
+                className="w-full border-b border-white/10 last:border-b-0 my-2 py-2 last:py-0 last:my-0"
+              >
+                <motion.button
+                  onClick={() =>
+                    talk.speakerIds.length > 0 && onTalkClick(talk)
+                  }
+                  className={`w-full flex rounded-xl items-start py-4 backdrop-blur-md text-left px-2 ${
+                    talk.speakerIds.length > 0
+                      ? "cursor-pointer hover:bg-white/5 hover:rounded-lg transition-all transition-colors duration-300 ease-in-out"
+                      : "cursor-default"
+                  }`}
+                >
+                  <div className="w-16 flex-shrink-0 text-white/60">
+                    {talk.time}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">{talk.title}</h3>
+                    {getTalkSpeakers(talk).map((speaker, idx) => (
+                      <p key={idx} className="text-white/80 text-sm">
+                        {speaker?.name}
+                      </p>
+                    ))}
+                  </div>
+                </motion.button>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Modals */}
+      <ProgramSlotModal
+        isOpen={selectedTalk !== null}
+        onClose={() => setSelectedTalk(null)}
+        title={selectedTalk?.title || ""}
+        date={selectedTalk?.date || ""}
+        description={selectedTalk?.description || ""}
+        speakers={
+          selectedTalk ? (getTalkSpeakers(selectedTalk) as Speaker[]) : []
+        }
+        onSpeakerClick={handleSpeakerClick}
+      />
+
+      {selectedSpeaker && (
+        <SpeakerProfileModal
+          isOpen={selectedSpeaker !== null}
+          onClose={() => setSelectedSpeaker(null)}
+          name={selectedSpeaker.name}
+          institution={selectedSpeaker.institution}
+          image={selectedSpeaker.image}
+          website={selectedSpeaker.website}
+          talks={getSpeakerTalks(selectedSpeaker.id)}
+          onTalkClick={handleTalkClick}
+        />
+      )}
+    </section>
+  );
+}

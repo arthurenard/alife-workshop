@@ -34,13 +34,13 @@ export default function ItemsGrid<T extends GridItem>({
   id,
 }: ItemsGridProps<T>) {
   return (
-    <section id={id} className="py-20">
+    <section id={id} className="sm:py-20 py-12">
       <div className="max-w-6xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          // transition={{ duration: 0.3 }}
+          transition={{ duration: 0.8 }}
           className="backdrop-blur-md bg-black/40 rounded-xl p-6"
         >
           <h2 className="text-3xl font-bold mb-12 text-center text-white">
@@ -56,22 +56,22 @@ export default function ItemsGrid<T extends GridItem>({
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                // transition={{ duration: 0.3 }}
-                whileHover={{ scale: 1.05 }}
-                className="backdrop-blur-md rounded-2xl overflow-hidden flex flex-col items-center p-6 hover:bg-black/30 hover:bg-white/5 transition-all transition-colors duration-300 ease-in-out w-full max-w-[320px] min-w-[200px]"
+                transition={{ duration: 0.8 }}
               >
-                <div className={renderImage(item).containerClassName}>
-                  <Image
-                    src={renderImage(item).src}
-                    alt={renderImage(item).alt}
-                    fill
-                    className={renderImage(item).className}
-                  />
+                <div className="rounded-2xl overflow-hidden flex flex-col items-center p-4 hover:scale-105 hover:bg-white/10 transition-all transition-colors duration-300 ease-in-out w-full max-w-[300px] min-w-[200px]">
+                  <div className={renderImage(item).containerClassName}>
+                    <Image
+                      src={renderImage(item).src}
+                      alt={renderImage(item).alt}
+                      fill
+                      className={renderImage(item).className}
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2 text-center">
+                    {item.name}
+                  </h3>
+                  {renderSubtitle && renderSubtitle(item)}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2 text-center">
-                  {item.name}
-                </h3>
-                {renderSubtitle && renderSubtitle(item)}
               </motion.button>
             ))}
           </div>
@@ -83,7 +83,7 @@ export default function ItemsGrid<T extends GridItem>({
                 key={index}
                 onClick={() => onItemClick(item)}
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center p-4 bg-black/20 backdrop-blur-md rounded-lg hover:bg-black/30 transition-all transition-colors duration-300 ease-in-out w-full"
+                className="flex items-center p-4 bg-black/20 rounded-xl hover:bg-white/10 transition-all transition-colors duration-300 ease-in-out w-full"
               >
                 <div
                   className={

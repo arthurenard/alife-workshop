@@ -15,8 +15,8 @@ export default function Header() {
         >
           <div className="relative h-40 w-40 sm:h-64 sm:w-64 mx-auto mb-12">
             <Image
-              src="/workshop.png"
-              alt="Conference Logo"
+              src="/logo.png"
+              alt="Alife Workshop Logo"
               fill
               className="object-contain"
               priority
@@ -33,8 +33,8 @@ export default function Header() {
           </p>
           <Link
             to="abstract"
-            smooth={true}
-            duration={500}
+            smooth={false}
+            duration={50}
             className="inline-block bg-white/10 backdrop-blur-sm text-white px-8 py-3 rounded-full font-semibold hover:bg-white/20 transition-colors cursor-pointer border border-white/20"
           >
             Learn More

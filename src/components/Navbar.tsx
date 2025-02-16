@@ -42,7 +42,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        className={`fixed top-0 w-full z-50 transition-all duration-100 ${
           isScrolled || isMenuOpen
             ? "bg-black/80 backdrop-blur-sm"
             : "bg-transparent"
@@ -70,10 +70,10 @@ export default function Navbar() {
                     key={item.name}
                     to={item.to}
                     spy={true}
-                    smooth={true}
+                    smooth={false}
                     offset={-96}
-                    duration={500}
-                    className="cursor-pointer px-4 py-2 text-base font-semibold text-white/90 hover:text-white transition-colors"
+                    duration={100}
+                    className="cursor-pointer px-4 py-2 text-base font-semibold text-white/90 hover:text-white hover:scale-105 transition-all transition-colors duration-300 ease-in-out"
                   >
                     {item.name}
                   </Link>
@@ -140,9 +140,9 @@ export default function Navbar() {
                 key={item.name}
                 to={item.to}
                 spy={true}
-                smooth={true}
+                smooth={false}
                 offset={-96}
-                duration={500}
+                duration={100}
                 onClick={() => setIsMenuOpen(false)}
                 className="block px-3 py-2 text-xl font-semibold text-white/90 hover:text-white transition-colors text-center"
               >

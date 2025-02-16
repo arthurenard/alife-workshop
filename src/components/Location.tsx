@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 
 export default function Location() {
   return (
-    <section id="location" className="py-20">
+    <section id="location" className="sm:py-20 py-12">
       <div className="max-w-6xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="backdrop-blur-md bg-black/40 rounded-xl p-8"
+          className="backdrop-blur-md bg-black/40 rounded-xl p-6"
         >
           <h2 className="text-3xl font-bold mb-12 text-center text-white">
             Location

@@ -5,14 +5,14 @@ import { Link } from "react-scroll";
 
 export default function Abstract() {
   return (
-    <section id="abstract" className="py-20">
+    <section id="abstract" className="sm:py-20 py-12">
       <div className="max-w-6xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="backdrop-blur-md bg-black/40 rounded-xl p-8"
+          className="backdrop-blur-md bg-black/40 rounded-xl p-6"
         >
           <h2 className="text-3xl font-bold mb-8 text-center text-white">
             About the Conference
@@ -32,8 +32,8 @@ export default function Abstract() {
               at{" "}
               <Link
                 to="location"
-                smooth={true}
-                duration={500}
+                smooth={false}
+                duration={100}
                 className="text-blue-200 hover:text-blue-100 cursor-pointer underline"
               >
                 EPFL Bernoulli Center
@@ -41,7 +41,7 @@ export default function Abstract() {
               , featuring keynote speeches, panel discussions, and interactive
               sessions.
             </p>
-            <div className="bg-black/20 backdrop-blur-md p-6 rounded-lg">
+            <div className="bg-black/20 backdrop-blur-md p-4 rounded-lg">
               <h3 className="text-xl font-semibold mb-4 text-white">
                 Key Topics
               </h3>

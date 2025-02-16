@@ -53,7 +53,7 @@ export default function Navbar() {
             <div className="flex-shrink-0">
               <div className="relative h-12 sm:h-16 w-40">
                 <Image
-                  src="/workshop.png"
+                  src="/logo.png"
                   alt="Conference Logo"
                   fill
                   className="object-contain"

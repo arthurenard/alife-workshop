@@ -38,18 +38,18 @@ export default function Home() {
   return (
     <main className="min-h-screen relative">
       {/* Fixed video background that repeats */}
-      <div className="fixed top-0 left-0 w-full h-screen -z-10">
+      <div className="fixed top-0 left-0 w-full h-screen -z-10 overflow-hidden">
         <video
           key={backgroundVideo.id}
           autoPlay
           muted
           loop
           playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full h-full object-cover filter blur-sm"
         >
           <source src={backgroundVideo.src} type={backgroundVideo.type} />
         </video>
-        <div className="absolute inset-0 bg-black/50" />{" "}
+        <div className="absolute inset-0 bg-black/10" />{" "}
         {/* Darkening overlay */}
       </div>
 

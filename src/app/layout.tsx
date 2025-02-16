@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Conference Name 2024",
-  description: "Description of your conference",
+  title: "ALIFE workshop",
+  description: "Detection and Emergence of Complexity",
 };
 
 export default function RootLayout({

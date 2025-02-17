@@ -55,6 +55,10 @@ export default function Navbar() {
     };
   }, [isMenuOpen]);
 
+  const handleLogoClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <nav
@@ -67,15 +71,20 @@ export default function Navbar() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             <div className="flex-shrink-0">
-              <div className="relative h-12 sm:h-16 w-40">
-                <Image
-                  src="/logo.png"
-                  alt="Conference Logo"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
+              {isScrolled && (
+                <div
+                  className="relative h-12 sm:h-16 w-40 cursor-pointer"
+                  onClick={handleLogoClick}
+                >
+                  <Image
+                    src="/logo.png"
+                    alt="Conference Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              )}
             </div>
 
             {/* Desktop Menu */}

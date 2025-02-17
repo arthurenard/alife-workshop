@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Project Overview
 
-Welcome to the Complexity Science Conference website, a platform dedicated to exploring the intricate and fascinating world of complexity science. This website serves as a hub for our annual conference, bringing together leading experts, researchers, and enthusiasts to discuss the latest advancements and applications in the field. From cellular automata to artificial life, our program is designed to inspire and engage participants with cutting-edge talks, workshops, and panel discussions.
+Welcome to the Detection and Emergence of Complexity workshop website, a workshop dedicated to exploring the intricate and fascinating world of complexity science. This website serves as a hub for our annual conference, bringing together leading experts, researchers, and enthusiasts to discuss the latest advancements and applications in the field. From cellular automata to artificial life, our program is designed to inspire and engage participants with cutting-edge talks, workshops, and panel discussions.
 
 ## Getting Started
 

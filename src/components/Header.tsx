@@ -3,8 +3,31 @@
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 export default function Header() {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const [gradientWidth, setGradientWidth] = useState(80);
+
+  useEffect(() => {
+    const updateGradientWidth = () => {
+      if (titleRef.current) {
+        const titleWidth = titleRef.current.offsetWidth;
+        const parentWidth =
+          titleRef.current.parentElement?.offsetWidth || window.innerWidth;
+        const widthPercentage = (titleWidth / parentWidth) * 100;
+        setGradientWidth(widthPercentage + 10); // Add some padding
+      }
+    };
+
+    updateGradientWidth();
+    window.addEventListener("resize", updateGradientWidth);
+
+    return () => {
+      window.removeEventListener("resize", updateGradientWidth);
+    };
+  }, []);
+
   return (
     <header className="relative h-screen flex items-center justify-center text-white">
       <div className="relative z-10 text-center w-full">
@@ -28,18 +51,24 @@ export default function Header() {
             <div
               className="absolute inset-0"
               style={{
-                background:
-                  "radial-gradient(ellipse 80% 50% at 50% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.3) 90%, rgba(0,0,0,0) 100%)",
-                WebkitMaskImage:
-                  "radial-gradient(ellipse 90% 60% at 50% 50%, black 40%, transparent 80%)",
-                maskImage:
-                  "radial-gradient(ellipse 90% 60% at 50% 50%, black 40%, transparent 80%)",
+                background: `radial-gradient(ellipse ${
+                  gradientWidth * 0.8
+                }% 75% at 50% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0) 60%)`,
+                WebkitMaskImage: `radial-gradient(ellipse ${
+                  gradientWidth * 0.8
+                }% 75% at 50% 50%, black 40%, transparent 80%)`,
+                maskImage: `radial-gradient(ellipse ${
+                  gradientWidth * 0.8
+                }% 75% at 50% 50%, black 40%, transparent 80%)`,
                 backdropFilter: "blur(8px)",
               }}
             />
             {/* Content div */}
             <div className="relative p-8">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">
+              <h1
+                className="text-4xl md:text-6xl font-bold mb-6"
+                ref={titleRef}
+              >
                 Detection and Emergence of Complexity
               </h1>
               <p className="text-2xl md:text-3xl mb-4 text-gray-200">

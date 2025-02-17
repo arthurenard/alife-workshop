@@ -82,11 +82,17 @@ export default function Program({ onTalkClick }: ProgramProps) {
                   </div>
                   <div>
                     <h3 className="font-semibold text-white">{talk.title}</h3>
-                    {getTalkSpeakers(talk).map((speaker, idx) => (
-                      <p key={idx} className="text-white/80 text-sm">
-                        {speaker?.name}
-                      </p>
-                    ))}
+                    <div className="flex flex-wrap gap-x-2">
+                      {getTalkSpeakers(talk).map((speaker, idx) => (
+                        <p
+                          key={idx}
+                          className="text-white/80 text-sm whitespace-nowrap"
+                        >
+                          {speaker?.name}
+                          {idx < getTalkSpeakers(talk).length - 1 && ","}
+                        </p>
+                      ))}
+                    </div>
                   </div>
                 </motion.button>
               </div>

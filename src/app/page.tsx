@@ -55,9 +55,9 @@ export default function Home() {
 
       {/* Content */}
       <div className="relative z-10">
-        <Navbar />
-        <Header />
         <div className="backdrop-blur-sm">
+          <Navbar />
+          <Header />
           <div className="container mx-auto px-4">
             <Abstract />
             <Program onTalkClick={handleTalkClick} />

@@ -53,7 +53,7 @@ export default function Header() {
               style={{
                 background: `radial-gradient(ellipse ${
                   gradientWidth * 0.8
-                }% 75% at 50% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0) 60%)`,
+                }% 75% at 50% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0) 60%)`,
                 WebkitMaskImage: `radial-gradient(ellipse ${
                   gradientWidth * 0.8
                 }% 75% at 50% 50%, black 40%, transparent 80%)`,

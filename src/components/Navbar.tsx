@@ -39,11 +39,13 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Handle scroll lock
+  // Handle scroll lock and prevent layout shift
   useEffect(() => {
     if (isMenuOpen) {
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = "hidden";
-      document.body.style.paddingRight = "15px"; // Prevent layout shift
+      document.body.style.paddingRight = `${scrollbarWidth}px`; // Prevent layout shift
     } else {
       document.body.style.overflow = "unset";
       document.body.style.paddingRight = "0px";

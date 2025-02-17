@@ -39,7 +39,7 @@ export default function Program({ onTalkClick }: ProgramProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="backdrop-blur-md bg-black/40 rounded-xl p-6"
+          className="backdrop-blur-xl bg-black/50 rounded-xl p-6"
         >
           <h2 className="text-3xl font-bold mb-12 text-center text-white">
             Conference Program
@@ -65,15 +65,15 @@ export default function Program({ onTalkClick }: ProgramProps) {
             {program[activeDay]?.map((talk, index) => (
               <div
                 key={index}
-                className="w-full border-b border-white/10 last:border-b-0 sm:py-4 py-2 last:pb-0 last:my-0 "
+                className="w-full border-b border-white/10 last:border-b-0 sm:py-4 py-2 last:pb-0 last:my-0"
               >
                 <motion.button
                   onClick={() =>
                     talk.speakerIds.length > 0 && onTalkClick(talk)
                   }
-                  className={`w-full flex rounded-xl items-start py-4 text-left px-2 hover:bg-white/10 ${
+                  className={`w-full flex rounded-xl items-start py-4 text-left px-2 bg-black/20 backdrop-blur-xl hover:bg-white/10 ${
                     talk.speakerIds.length > 0
-                      ? "cursor-pointer transition-all transition-colors duration-300 ease-in-out hover:scale-[101%]"
+                      ? "cursor-pointer transition-all transition-colors duration-300 ease-in-out hover:scale-[102%]"
                       : "cursor-default"
                   }`}
                 >

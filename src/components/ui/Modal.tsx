@@ -42,11 +42,11 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
           />
 
           {/* Modal Container - for vertical centering */}
-          <div 
+          <div
             className="fixed inset-0 z-50 overflow-y-auto pt-20 pb-6"
             onClick={handleContainerClick}
           >
-            <div 
+            <div
               className="min-h-[calc(100%-5rem)] flex items-center justify-center p-4"
               onClick={handleContainerClick}
             >

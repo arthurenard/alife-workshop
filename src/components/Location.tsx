@@ -12,7 +12,7 @@ export default function Location() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="backdrop-blur-md bg-black/40 rounded-xl p-6"
+          className="backdrop-blur-xl bg-black/50 rounded-xl p-6"
         >
           <h2 className="text-3xl font-bold mb-12 text-center text-white">
             Location

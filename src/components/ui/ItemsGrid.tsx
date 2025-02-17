@@ -41,7 +41,7 @@ export default function ItemsGrid<T extends GridItem>({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="backdrop-blur-md bg-black/40 rounded-xl p-6"
+          className="backdrop-blur-xl bg-black/50 rounded-xl p-6"
         >
           <h2 className="text-3xl font-bold mb-12 text-center text-white">
             {title}
@@ -58,7 +58,7 @@ export default function ItemsGrid<T extends GridItem>({
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="rounded-2xl overflow-hidden flex flex-col items-center p-4 hover:scale-105 hover:bg-white/10 transition-all transition-colors duration-300 ease-in-out w-full max-w-[300px] min-w-[200px]">
+                <div className="rounded-2xl bg-black/20 backdrop-blur-xl overflow-hidden flex flex-col items-center p-4 hover:scale-105 hover:bg-white/10 transition-all transition-colors duration-300 ease-in-out w-full max-w-[300px] min-w-[300px]">
                   <div className={renderImage(item).containerClassName}>
                     <Image
                       src={renderImage(item).src}
@@ -83,7 +83,7 @@ export default function ItemsGrid<T extends GridItem>({
                 key={index}
                 onClick={() => onItemClick(item)}
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center p-4 bg-black/20 rounded-xl hover:bg-white/10 transition-all transition-colors duration-300 ease-in-out w-full"
+                className="flex items-center p-4 bg-black/20 backdrop-blur-xl rounded-xl hover:bg-white/10 transition-all transition-colors duration-300 ease-in-out w-full"
               >
                 <div
                   className={

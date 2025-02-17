@@ -12,7 +12,7 @@ export default function Abstract() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="backdrop-blur-md bg-black/40 rounded-xl p-6"
+          className="backdrop-blur-xl bg-black/50 rounded-xl p-6"
         >
           <h2 className="text-3xl font-bold mb-8 text-center text-white">
             About the Conference
@@ -41,7 +41,7 @@ export default function Abstract() {
               , featuring keynote speeches, panel discussions, and interactive
               sessions.
             </p>
-            <div className="bg-black/20 backdrop-blur-md p-4 rounded-lg">
+            <div className="bg-black/30 backdrop-blur-sm p-4 rounded-lg">
               <h3 className="text-xl font-semibold mb-4 text-white">
                 Key Topics
               </h3>

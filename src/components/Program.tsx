@@ -41,11 +41,11 @@ export default function Program({ onTalkClick }: ProgramProps) {
           transition={{ duration: 0.8 }}
           className="backdrop-blur-xl bg-black/50 rounded-xl p-6"
         >
-          <h2 className="text-3xl font-bold mb-12 text-center text-white">
+          <h2 className="text-3xl font-bold mb-8 text-center text-white">
             Conference Program
           </h2>
 
-          <div className="flex justify-center mb-8">
+          <div className="flex justify-center mb-4">
             {days.map((day) => (
               <button
                 key={day.day}

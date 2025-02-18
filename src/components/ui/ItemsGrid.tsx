@@ -22,6 +22,7 @@ interface ItemsGridProps<T extends GridItem> {
   onItemClick: (item: T) => void;
   mobileImageContainerClassName?: string;
   id?: string;
+  description?: React.ReactNode;
 }
 
 export default function ItemsGrid<T extends GridItem>({
@@ -32,6 +33,7 @@ export default function ItemsGrid<T extends GridItem>({
   onItemClick,
   mobileImageContainerClassName,
   id,
+  description,
 }: ItemsGridProps<T>) {
   return (
     <section id={id} className="sm:py-20 py-12">
@@ -43,9 +45,12 @@ export default function ItemsGrid<T extends GridItem>({
           transition={{ duration: 0.8 }}
           className="backdrop-blur-xl bg-black/50 rounded-xl p-6"
         >
-          <h2 className="text-3xl font-bold mb-12 text-center text-white">
+          <h2 className="text-3xl font-bold mb-8 text-center text-white">
             {title}
           </h2>
+          {description && (
+            <div className="mb-6 text-white/90">{description}</div>
+          )}
 
           {/* Desktop Layout */}
           <div className="hidden md:flex flex-wrap justify-center gap-12 max-w-6xl mx-auto">

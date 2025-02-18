@@ -11,6 +11,8 @@ import Location from "@/components/Location";
 import Footer from "@/components/Footer";
 import ProgramSlotModal from "@/components/ProgramSlotModal";
 import SpeakerProfileModal from "@/components/SpeakerProfileModal";
+import OrganizerProfileModal from "@/components/OrganizerProfileModal";
+import Organizers from "@/components/Organizers";
 import { Talk, Speaker } from "@/types";
 import { getSpeakerTalks } from "@/data/program";
 import { getSpeakerById } from "@/data/speakers";
@@ -19,6 +21,9 @@ import { backgroundVideos, getRandomVideo } from "@/data/videos";
 export default function Home() {
   const [selectedTalk, setSelectedTalk] = useState<Talk | null>(null);
   const [selectedSpeaker, setSelectedSpeaker] = useState<Speaker | null>(null);
+  const [selectedOrganizer, setSelectedOrganizer] = useState<Speaker | null>(
+    null
+  );
   const [backgroundVideo, setBackgroundVideo] = useState(backgroundVideos[0]);
 
   useEffect(() => {
@@ -35,6 +40,10 @@ export default function Home() {
     setSelectedSpeaker(speaker);
   };
 
+  const handleOrganizerClick = (organizer: Speaker) => {
+    setSelectedOrganizer(organizer);
+  };
+
   return (
     <main className="min-h-screen relative">
       {/* Fixed video background that repeats */}
@@ -49,7 +58,7 @@ export default function Home() {
         >
           <source src={backgroundVideo.src} type={backgroundVideo.type} />
         </video>
-        <div className="absolute inset-0 bg-black/10" />{" "}
+        <div className="absolute inset-0 bg-black/20" />{" "}
         {/* Darkening overlay */}
       </div>
 
@@ -62,6 +71,7 @@ export default function Home() {
           <Program onTalkClick={handleTalkClick} />
           <Speakers onSpeakerClick={handleSpeakerClick} />
           <Sponsors />
+          <Organizers onOrganizerClick={handleOrganizerClick} />
           <Location />
         </div>
         <Footer />
@@ -85,6 +95,14 @@ export default function Home() {
             {...selectedSpeaker}
             talks={getSpeakerTalks(selectedSpeaker.id)}
             onTalkClick={handleTalkClick}
+          />
+        )}
+
+        {selectedOrganizer && (
+          <OrganizerProfileModal
+            isOpen={true}
+            onClose={() => setSelectedOrganizer(null)}
+            organizer={selectedOrganizer}
           />
         )}
       </div>

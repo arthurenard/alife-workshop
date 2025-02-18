@@ -22,6 +22,10 @@ const navItems = [
     to: "sponsors",
   },
   {
+    name: "Organizers",
+    to: "organizers",
+  },
+  {
     name: "Location",
     to: "location",
   },

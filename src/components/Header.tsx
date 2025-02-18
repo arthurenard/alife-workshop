@@ -4,10 +4,21 @@ import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { useInactivity } from "@/hooks/useInactivity";
 
 export default function Header() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [gradientWidth, setGradientWidth] = useState(80);
+  const isInactive = useInactivity();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const updateGradientWidth = () => {
@@ -79,14 +90,24 @@ export default function Header() {
               </p>
             </div>
           </div>
-          <Link
-            to="abstract"
-            smooth={false}
-            duration={50}
-            className="inline-block bg-white/10 backdrop-blur-xl text-white px-8 py-3 rounded-full font-semibold hover:bg-white/20 hover:scale-105 duration-300 transition-colors cursor-pointer border border-white/20 mt-4"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Learn More
-          </Link>
+            <Link
+              to="abstract"
+              spy={true}
+              smooth={false}
+              offset={-96}
+              duration={100}
+              className={`inline-block bg-white/10 backdrop-blur-xl text-white px-8 py-3 rounded-full font-semibold hover:bg-white/20 hover:scale-105 duration-300 transition-all cursor-pointer border border-white/20 mt-4 ${
+                isInactive && !isScrolled ? "opacity-0" : "opacity-100"
+              }`}
+            >
+              Learn More
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
     </header>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
 import Abstract from "@/components/Abstract";
@@ -12,10 +12,10 @@ import Footer from "@/components/Footer";
 import ProgramSlotModal from "@/components/ProgramSlotModal";
 import ProfileModal from "@/components/ProfileModal";
 import Organizers from "@/components/Organizers";
+import VideoBackground from "@/components/VideoBackground";
 import { Talk, Speaker } from "@/types";
 import { getSpeakerTalks } from "@/data/program";
 import { getSpeakerById } from "@/data/speakers";
-import { backgroundVideos, getRandomVideo } from "@/data/videos";
 
 export default function Home() {
   const [selectedTalk, setSelectedTalk] = useState<Talk | null>(null);
@@ -23,38 +23,6 @@ export default function Home() {
   const [selectedOrganizer, setSelectedOrganizer] = useState<Speaker | null>(
     null
   );
-  const [backgroundVideo, setBackgroundVideo] = useState(backgroundVideos[0]);
-  const [isVideoFading, setIsVideoFading] = useState(false);
-
-  const changeVideo = useCallback(() => {
-    setIsVideoFading(true);
-
-    // Wait for fade out animation
-    setTimeout(() => {
-      setBackgroundVideo(getRandomVideo());
-      setIsVideoFading(false);
-    }, 1000);
-  }, []);
-
-  useEffect(() => {
-    const videoElement = document.querySelector("video");
-
-    if (videoElement) {
-      // Listen for when the video is about to end
-      videoElement.addEventListener("timeupdate", () => {
-        const timeLeft = videoElement.duration - videoElement.currentTime;
-        if (timeLeft < 1.0 && !isVideoFading) {
-          changeVideo();
-        }
-      });
-    }
-
-    return () => {
-      if (videoElement) {
-        videoElement.removeEventListener("timeupdate", () => {});
-      }
-    };
-  }, [changeVideo, isVideoFading]);
 
   const handleTalkClick = (talk: Talk) => {
     setSelectedSpeaker(null);
@@ -72,27 +40,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen relative">
-      {/* Fixed video background that repeats */}
-      <div className="fixed top-0 left-0 w-full h-screen -z-10 overflow-hidden">
-        <div
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            isVideoFading ? "opacity-0" : "opacity-100"
-          }`}
-        >
-          <video
-            key={backgroundVideo.id}
-            autoPlay
-            muted
-            loop={false}
-            playsInline
-            className="absolute top-0 left-0 w-full h-full object-cover filter blur-sm"
-          >
-            <source src={backgroundVideo.src} type={backgroundVideo.type} />
-          </video>
-        </div>
-        <div className="absolute inset-0 bg-black/20" />{" "}
-        {/* Darkening overlay */}
-      </div>
+      <VideoBackground />
 
       {/* Content */}
       <div className="relative z-10">

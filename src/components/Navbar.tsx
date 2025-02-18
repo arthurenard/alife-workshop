@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import Image from "next/image";
+import { useInactivity } from "@/hooks/useInactivity";
 
 const navItems = [
   {
@@ -34,6 +35,7 @@ const navItems = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isInactive = useInactivity();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -95,7 +97,11 @@ export default function Navbar() {
 
             {/* Desktop Menu */}
             <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-6">
+              <div
+                className={`ml-10 flex items-baseline space-x-6 transition-opacity duration-300 ${
+                  isInactive && !isScrolled ? "opacity-0" : "opacity-100"
+                }`}
+              >
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
@@ -116,7 +122,9 @@ export default function Navbar() {
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-white/90 hover:text-white focus:outline-none z-50"
+                className={`inline-flex items-center justify-center p-2 rounded-md text-white/90 hover:text-white focus:outline-none z-50 transition-opacity duration-300 ${
+                  isInactive && !isScrolled ? "opacity-0" : "opacity-100"
+                }`}
               >
                 <span className="sr-only">Open main menu</span>
                 {!isMenuOpen ? (

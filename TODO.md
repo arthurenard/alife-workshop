@@ -1,6 +1,7 @@
 [x] About Organizer
 [x] Photo Bernoilli instead of keypoints
-[] Tester webm
-[] Fade into other video
+[x] Tester webm
+[x] Fade into other video
 [] Implementer CA
 [x] Description speakers
+[x] Wallpaper inactivity

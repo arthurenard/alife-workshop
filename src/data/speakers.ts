@@ -9,6 +9,8 @@ export const speakers: Speaker[] = [
     institution: "EPFL",
     website: "https://www.hongler.org/",
     image: "/speakers/clement-hongler.jpg",
+    biography:
+      "Professor at EPFL specializing in mathematical physics and complex systems...",
   },
   {
     id: "vassilis-papadopoulos",
@@ -16,6 +18,8 @@ export const speakers: Speaker[] = [
     institution: "EPFL",
     website: "https://vassi.life/",
     image: "/speakers/vassilis-papadopoulos.jpg",
+    biography:
+      "Professor at EPFL specializing in mathematical physics and complex systems...",
   },
   {
     id: "barbora-hudcova",

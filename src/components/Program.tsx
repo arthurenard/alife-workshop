@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Talk, Speaker } from "@/types";
 import ProgramSlotModal from "./ProgramSlotModal";
-import SpeakerProfileModal from "./SpeakerProfileModal";
+import ProfileModal from "./ProfileModal";
 import { program, getTalkSpeakers, getSpeakerTalks } from "@/data/program";
 
 interface ProgramProps {
@@ -115,13 +115,10 @@ export default function Program({ onTalkClick }: ProgramProps) {
       />
 
       {selectedSpeaker && (
-        <SpeakerProfileModal
-          isOpen={selectedSpeaker !== null}
+        <ProfileModal
+          isOpen={true}
           onClose={() => setSelectedSpeaker(null)}
-          name={selectedSpeaker.name}
-          institution={selectedSpeaker.institution}
-          image={selectedSpeaker.image}
-          website={selectedSpeaker.website}
+          person={selectedSpeaker}
           talks={getSpeakerTalks(selectedSpeaker.id)}
           onTalkClick={handleTalkClick}
         />

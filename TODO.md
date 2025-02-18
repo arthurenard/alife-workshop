@@ -3,4 +3,4 @@
 [] Tester webm
 [] Fade into other video
 [] Implementer CA
-[] Description speakers
+[x] Description speakers

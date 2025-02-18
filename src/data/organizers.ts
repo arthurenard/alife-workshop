@@ -10,6 +10,8 @@ export const organizers: Speaker[] = [
     institution: "EPFL",
     website: "https://www.hongler.org/",
     image: "/speakers/clement-hongler.jpg",
+    biography:
+      "Professor at EPFL and head of the complex systems laboratory...",
   },
   {
     id: "vassilis-papadopoulos",

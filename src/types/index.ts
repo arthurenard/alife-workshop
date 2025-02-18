@@ -4,6 +4,7 @@ export interface Speaker {
   institution: string;
   website: string;
   image: string;
+  biography?: string; // Optional biography
 }
 
 export interface Talk {

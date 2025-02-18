@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Modal from "./ui/Modal";
 import { motion } from "framer-motion";
-import { Speaker } from "@/types";
+import { Speaker, Talk } from "@/types";
 
 interface ProgramSlotModalProps {
   isOpen: boolean;
@@ -38,7 +38,7 @@ export default function ProgramSlotModal({
               {speakers.filter(Boolean).map((speaker, index) => (
                 <motion.button
                   key={index}
-                  onClick={() => speaker && onSpeakerClick(speaker)}
+                  onClick={() => onSpeakerClick(speaker!)}
                   className="flex items-center space-x-4 w-full p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors text-left hover:bg-white/10 transition-all hover:scale-105"
                 >
                   <div className="relative w-16 h-16 flex-shrink-0">

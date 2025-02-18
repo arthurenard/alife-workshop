@@ -2,47 +2,41 @@
 
 import Image from "next/image";
 import Modal from "./ui/Modal";
-import { Talk } from "@/types";
+import { Speaker, Talk } from "@/types";
 
-interface SpeakerProfileModalProps {
+interface ProfileModalProps {
   isOpen: boolean;
   onClose: () => void;
-  name: string;
-  institution: string;
-  image: string;
-  website: string;
-  talks: Talk[];
+  person: Speaker;
+  talks?: Talk[];
   onTalkClick?: (talk: Talk) => void;
 }
 
-export default function SpeakerProfileModal({
+export default function ProfileModal({
   isOpen,
   onClose,
-  name,
-  institution,
-  image,
-  website,
+  person,
   talks,
   onTalkClick,
-}: SpeakerProfileModalProps) {
+}: ProfileModalProps) {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="text-white">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8">
           <div className="relative w-40 h-40 flex-shrink-0">
             <Image
-              src={image}
-              alt={name}
+              src={person.image}
+              alt={person.name}
               fill
               className="object-cover rounded-full"
             />
           </div>
 
           <div className="flex flex-col items-center md:items-start">
-            <h2 className="text-2xl font-bold mb-1">{name}</h2>
-            <p className="text-white/60 mb-2">{institution}</p>
+            <h2 className="text-2xl font-bold mb-1">{person.name}</h2>
+            <p className="text-white/60 mb-2">{person.institution}</p>
             <a
-              href={website}
+              href={person.website}
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-300 hover:text-blue-400 transition-colors"
@@ -52,7 +46,18 @@ export default function SpeakerProfileModal({
           </div>
         </div>
 
-        {talks.length > 0 && (
+        {person.biography && (
+          <>
+            <h3 className="text-xl font-semibold mb-4">Biography</h3>
+            <div className="space-y-4 mb-8">
+              <div className="p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all">
+                <p className="text-white/90">{person.biography}</p>
+              </div>
+            </div>
+          </>
+        )}
+
+        {talks && talks.length > 0 && (
           <>
             <h3 className="text-xl font-semibold mb-4">Talks</h3>
             <div className="space-y-4">

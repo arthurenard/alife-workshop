@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Modal from "./ui/Modal";
 import { motion } from "framer-motion";
-import { Speaker, Talk } from "@/types";
+import { Speaker } from "@/types";
 
 interface ProgramSlotModalProps {
   isOpen: boolean;

@@ -5,7 +5,6 @@ import { backgroundVideos, getRandomVideo } from "@/data/videos";
 
 export default function VideoBackground() {
   const [currentVideo, setCurrentVideo] = useState(backgroundVideos[0]);
-  const [nextVideo, setNextVideo] = useState(getRandomVideo());
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const startTransition = useCallback(() => {
@@ -14,7 +13,6 @@ export default function VideoBackground() {
 
       // Get next video that's different from current
       const newVideo = getRandomVideo(currentVideo.id);
-      setNextVideo(newVideo);
 
       // After fade out, switch videos
       setTimeout(() => {

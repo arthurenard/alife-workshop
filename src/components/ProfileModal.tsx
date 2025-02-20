@@ -35,14 +35,16 @@ export default function ProfileModal({
           <div className="flex flex-col items-center md:items-start">
             <h2 className="text-2xl font-bold mb-1">{person.name}</h2>
             <p className="text-white/60 mb-2">{person.institution}</p>
-            <a
-              href={person.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-300 hover:text-blue-400 transition-colors"
-            >
-              Personal Website
-            </a>
+            {person.website && (
+              <a
+                href={person.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-300 hover:text-blue-400 transition-colors"
+              >
+                Personal Website
+              </a>
+            )}
           </div>
         </div>
 

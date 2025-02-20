@@ -48,7 +48,7 @@ export default function Home() {
         <Header />
         <div className="container mx-auto px-4">
           <Abstract />
-          <Program onTalkClick={handleTalkClick} />
+          {/* <Program onTalkClick={handleTalkClick} /> */}
           <Speakers onSpeakerClick={handleSpeakerClick} />
           <Sponsors />
           <Organizers onOrganizerClick={handleOrganizerClick} />

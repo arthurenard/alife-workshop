@@ -9,23 +9,25 @@ export const organizers: Speaker[] = [
     name: "Clément Hongler",
     institution: "EPFL",
     website: "https://www.hongler.org/",
-    image: "/speakers/clement-hongler.jpg",
+    image: "/organizers/clement-hongler.jpg",
     biography:
-      "Professor at EPFL and head of the complex systems laboratory...",
+      "Professor at EPFL, head of the Chair of Statistical Field Theory.",
   },
   {
     id: "vassilis-papadopoulos",
     name: "Vassilis Papadopoulos",
     institution: "EPFL",
     website: "https://vassi.life/",
-    image: "/speakers/vassilis-papadopoulos.jpg",
+    image: "/organizers/vassilis-papadopoulos.jpg",
   },
   {
     id: "barbora-hudcova",
     name: "Barbora Hudcová",
     institution: "EPFL",
     website: "https://www.barahudcova.com/",
-    image: "/speakers/bara-hudcova.jpg",
+    image: "/organizers/barbora-hudcova.jpg",
+    biography:
+      "I am a researcher at the border between mathematics and computer science, fascinated with emergent behaviour of dynamical systems. I am currently studying complex systems as models of self-replication and universal computation.",
   },
 ];
 

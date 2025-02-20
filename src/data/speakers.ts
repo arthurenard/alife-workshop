@@ -3,30 +3,68 @@ import { Speaker } from "@/types";
 // Fake data
 
 export const speakers: Speaker[] = [
+  // {
+  //   id: "clement-hongler",
+  //   name: "Clément Hongler",
+  //   institution: "EPFL",
+  //   website: "https://www.hongler.org/",
+  //   image: "/speakers/clement-hongler.jpg",
+  //   biography:
+  //     "Professor at EPFL specializing in mathematical physics and complex systems...",
+  // },
+  // {
+  //   id: "vassilis-papadopoulos",
+  //   name: "Vassilis Papadopoulos",
+  //   institution: "EPFL",
+  //   website: "https://vassi.life/",
+  //   image: "/speakers/vassilis-papadopoulos.jpg",
+  //   biography:
+  //     "Professor at EPFL specializing in mathematical physics and complex systems...",
+  // },
+  // {
+  //   id: "barbora-hudcova",
+  //   name: "Barbora Hudcová",
+  //   institution: "EPFL",
+  //   website: "https://www.barahudcova.com/",
+  //   image: "/speakers/bara-hudcova.jpg",
+  // },
   {
-    id: "clement-hongler",
-    name: "Clément Hongler",
-    institution: "EPFL",
-    website: "https://www.hongler.org/",
-    image: "/speakers/clement-hongler.jpg",
-    biography:
-      "Professor at EPFL specializing in mathematical physics and complex systems...",
+    id: "sebastian-risi",
+    name: "Sebastian Risi",
+    institution: "",
+    website: "",
+    image: "/speakers/sebastian-risi.png",
   },
   {
-    id: "vassilis-papadopoulos",
-    name: "Vassilis Papadopoulos",
-    institution: "EPFL",
-    website: "https://vassi.life/",
-    image: "/speakers/vassilis-papadopoulos.jpg",
-    biography:
-      "Professor at EPFL specializing in mathematical physics and complex systems...",
+    id: "clement-moulin-frier",
+    name: "Clément Moulin-Frier",
+    institution: "",
+    website: "",
+    image: "/speakers/clement-moulin-frier.jpg",
   },
   {
-    id: "barbora-hudcova",
-    name: "Barbora Hudcová",
-    institution: "EPFL",
-    website: "https://www.barahudcova.com/",
-    image: "/speakers/bara-hudcova.jpg",
+    id: "trym-lindell",
+    name: "Trym A.E. Lindell",
+    institution: "Oslo Metropolitan University",
+    website: "",
+    image: "/speakers/trym-lindell.jpg",
+    biography: "Assistant Professor at Oslo Metropolitan University.",
+  },
+  {
+    id: "akarsh-kumar",
+    name: "Akarsh Kumar",
+    institution: "MIT, Sakana AI",
+    website: "",
+    image: "/speakers/akarsh-kumar.jpg",
+    biography: "Ph.D. Student (MIT) and Research Scientist Intern (Sakana AI)",
+  },
+  {
+    id: "jordan-cotler",
+    name: "Jordan Cotler",
+    institution: "Harvard University",
+    website: "",
+    image: "/speakers/jordan-cotler.jpeg",
+    biography: "Assistant Professor (Harvard University)",
   },
 ];
 

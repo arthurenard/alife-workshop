@@ -3,22 +3,13 @@
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import { useInactivity } from "@/hooks/useInactivity";
+import { useRef, useState, useEffect } from "react";
+import { useVisibility } from "@/hooks/useVisibility";
 
 export default function Header() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [gradientWidth, setGradientWidth] = useState(80);
-  const isInactive = useInactivity();
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { isScrolled, isInactive } = useVisibility();
 
   useEffect(() => {
     const updateGradientWidth = () => {
@@ -48,7 +39,7 @@ export default function Header() {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <div className="relative h-40 w-40 sm:h-64 sm:w-64 mx-auto mb-12">
+          <div className="relative h-48 w-48 sm:h-80 sm:w-80 mx-auto mb-12">
             <Image
               src="/logo.png"
               alt="Alife Workshop Logo"

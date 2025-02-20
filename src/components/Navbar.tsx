@@ -3,17 +3,17 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import Image from "next/image";
-import { useInactivity } from "@/hooks/useInactivity";
+import { useVisibility } from "@/hooks/useVisibility";
 
 const navItems = [
   {
     name: "About",
     to: "abstract",
   },
-  {
-    name: "Program",
-    to: "program",
-  },
+  // {
+  //   name: "Program",
+  //   to: "program",
+  // },
   {
     name: "Speakers",
     to: "speakers",
@@ -33,17 +33,8 @@ const navItems = [
 ];
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isInactive = useInactivity();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { isScrolled, isInactive } = useVisibility();
 
   // Handle scroll lock and prevent layout shift
   useEffect(() => {

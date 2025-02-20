@@ -4,7 +4,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
 import Abstract from "@/components/Abstract";
-import Program from "@/components/Program";
+// import Program from "@/components/Program";
 import Speakers from "@/components/Speakers";
 import Sponsors from "@/components/Sponsors";
 import Location from "@/components/Location";

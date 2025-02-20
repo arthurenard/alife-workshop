@@ -10,7 +10,6 @@ const navItems = [
     name: "About",
     to: "abstract",
   },
-  // Uncomment this section when data is available
   // {
   //   name: "Program",
   //   to: "program",

@@ -28,19 +28,33 @@ export const speakers: Speaker[] = [
   //   website: "https://www.barahudcova.com/",
   //   image: "/speakers/bara-hudcova.jpg",
   // },
+
   {
-    id: "sebastian-risi",
-    name: "Sebastian Risi",
-    institution: "",
+    id: "jordan-cotler",
+    name: "Jordan Cotler",
+    institution: "Harvard University",
     website: "",
-    image: "/speakers/sebastian-risi.png",
+    image: "/speakers/jordan-cotler.jpeg",
+    biography: "Assistant Professor at Harvard University",
   },
   {
-    id: "clement-moulin-frier",
-    name: "Clément Moulin-Frier",
-    institution: "",
+    id: "clement-hongler",
+    name: "Clément Hongler",
+    institution: "EPFL",
+    website: "https://www.hongler.org/",
+    image: "/organizers/clement-hongler.jpg",
+    biography:
+      "Professor at EPFL, head of the Chair of Statistical Field Theory.",
+  },
+
+  {
+    id: "akarsh-kumar",
+    name: "Akarsh Kumar",
+    institution: "MIT, Sakana AI",
     website: "",
-    image: "/speakers/clement-moulin-frier.jpg",
+    image: "/speakers/akarsh-kumar.jpg",
+    biography:
+      "Ph.D. Student at MIT and Research Scientist Intern at Sakana AI",
   },
   {
     id: "trym-lindell",
@@ -51,20 +65,18 @@ export const speakers: Speaker[] = [
     biography: "Assistant Professor at Oslo Metropolitan University.",
   },
   {
-    id: "akarsh-kumar",
-    name: "Akarsh Kumar",
-    institution: "MIT, Sakana AI",
+    id: "clement-moulin-frier",
+    name: "Clément Moulin-Frier",
+    institution: "",
     website: "",
-    image: "/speakers/akarsh-kumar.jpg",
-    biography: "Ph.D. Student (MIT) and Research Scientist Intern (Sakana AI)",
+    image: "/speakers/clement-moulin-frier.jpg",
   },
   {
-    id: "jordan-cotler",
-    name: "Jordan Cotler",
-    institution: "Harvard University",
+    id: "sebastian-risi",
+    name: "Sebastian Risi",
+    institution: "",
     website: "",
-    image: "/speakers/jordan-cotler.jpeg",
-    biography: "Assistant Professor (Harvard University)",
+    image: "/speakers/sebastian-risi.png",
   },
 ];
 

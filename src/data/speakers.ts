@@ -67,16 +67,18 @@ export const speakers: Speaker[] = [
   {
     id: "clement-moulin-frier",
     name: "Clément Moulin-Frier",
-    institution: "",
+    institution: "Inria, Bordeaux",
     website: "",
     image: "/speakers/clement-moulin-frier.jpg",
+    biography: "Researcher at Flowers lab, Inria, Bordeaux",
   },
   {
     id: "sebastian-risi",
     name: "Sebastian Risi",
-    institution: "",
+    institution: "IT University of Copenhagen",
     website: "",
     image: "/speakers/sebastian-risi.png",
+    biography: "Professor at IT Univesity of Copenhagen",
   },
 ];
 

@@ -8,14 +8,14 @@ export const program: Record<string, Talk[]> = {
   //   {
   //     time: "09:00",
   //     title: "Registration & Coffee",
-  //     date: "May 26, 2024",
+  //     date: "May 26, 2025",
   //     description: "",
   //     speakerIds: [],
   //   },
   //   {
   //     time: "10:00",
   //     title: "Opening Keynote: Complexity in Cellular Automata",
-  //     date: "May 26, 2024",
+  //     date: "May 26, 2025",
   //     description:
   //       "An exploration of emergence and complexity in cellular automata systems, focusing on pattern formation and self-organization.",
   //     speakerIds: ["clement-hongler"],
@@ -23,7 +23,7 @@ export const program: Record<string, Talk[]> = {
   //   {
   //     time: "11:30",
   //     title: "Panel Discussion: Future of AI in Complex Systems",
-  //     date: "May 26, 2024",
+  //     date: "May 26, 2025",
   //     description:
   //       "A panel discussion on the future role of AI in understanding and developing complex systems.",
   //     speakerIds: ["vassilis-papadopoulos", "barbora-hudcova"],
@@ -31,7 +31,7 @@ export const program: Record<string, Talk[]> = {
   //   {
   //     time: "14:00",
   //     title: "Workshop: Hands-on with Cellular Automata",
-  //     date: "May 26, 2024",
+  //     date: "May 26, 2025",
   //     description:
   //       "A practical workshop exploring cellular automata and their applications.",
   //     speakerIds: ["clement-hongler", "barbora-hudcova"],
@@ -41,7 +41,7 @@ export const program: Record<string, Talk[]> = {
   //   {
   //     time: "09:00",
   //     title: "Keynote: Emergence in Artificial Life",
-  //     date: "May 27, 2024",
+  //     date: "May 27, 2025",
   //     description:
   //       "Exploring the concept of emergence in artificial life systems.",
   //     speakerIds: ["barbora-hudcova"],
@@ -49,7 +49,7 @@ export const program: Record<string, Talk[]> = {
   //   {
   //     time: "11:00",
   //     title: "Talk: Complexity Measures in AI",
-  //     date: "May 27, 2024",
+  //     date: "May 27, 2025",
   //     description:
   //       "Discussing various measures of complexity in artificial intelligence.",
   //     speakerIds: ["vassilis-papadopoulos"],
@@ -59,7 +59,7 @@ export const program: Record<string, Talk[]> = {
   //   {
   //     time: "09:00",
   //     title: "Closing Keynote: The Future of Complexity Science",
-  //     date: "May 28, 2024",
+  //     date: "May 28, 2025",
   //     description:
   //       "A look into the future of complexity science and its potential impacts.",
   //     speakerIds: ["clement-hongler", "vassilis-papadopoulos"],

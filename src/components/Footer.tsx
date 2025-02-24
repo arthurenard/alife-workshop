@@ -11,7 +11,7 @@ export default function Footer() {
 
           <div>
             <h3 className="text-xl font-semibold mb-4">Conference Details</h3>
-            <p className="mb-2">May 26-28, 2024</p>
+            <p className="mb-2">May 26-28, 2025</p>
             <p>EPFL Bernoulli Center, Lausanne</p>
           </div>
 

@@ -77,7 +77,7 @@ export default function Header() {
                 ALIFE Perspectives
               </p>
               <p className="text-lg md:text-2xl mb-8">
-                May 26-28, 2024 • EPFL, Lausanne
+                May 26-28, 2025 • EPFL, Lausanne
               </p>
             </div>
           </div>

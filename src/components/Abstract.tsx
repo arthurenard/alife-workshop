@@ -16,7 +16,7 @@ export default function Abstract() {
           className="backdrop-blur-xl bg-black/50 rounded-xl p-6"
         >
           <h2 className="text-3xl font-bold mb-8 text-center text-white">
-            About the Conference
+            Conference Abstract
           </h2>
           <div className="text-white/90 space-y-6">
             <p>{abstractDescription}</p>

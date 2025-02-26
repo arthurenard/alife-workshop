@@ -1,3 +1,5 @@
+import { FaXTwitter, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa6";
+
 export default function Footer() {
   return (
     <footer className="bg-black/50 backdrop-blur-xl text-white pt-12 pb-6">
@@ -5,32 +7,46 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
-            <p className="mb-2">Email: contact@conference.com</p>
-            <p>Phone: +1 234 567 890</p>
+            <div className="flex items-center space-x-2 mb-2">
+              <span>✉️</span>
+              <a
+                href="mailto:demeco2025@gmail.com"
+                className="hover:text-white transition-colors"
+              >
+                demeco2025@gmail.com
+              </a>
+            </div>
           </div>
 
           <div>
             <h3 className="text-xl font-semibold mb-4">Conference Details</h3>
-            <p className="mb-2">May 26-28, 2025</p>
-            <p>EPFL Bernoulli Center, Lausanne</p>
+            <p className="mb-2">
+              <span>📅</span> May 26-28, 2025
+            </p>
+            <div className="flex items-center space-x-2">
+              <span>📍</span>
+              <a
+                href="https://maps.app.goo.gl/No7kRoAvWX7BW8K79"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+              >
+                EPFL Bernoulli Center, Lausanne
+              </a>
+            </div>
           </div>
 
           <div>
             <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
+            <div className="flex items-center space-x-2">
+              <FaXTwitter className="h-5 w-5" />
               <a
-                href="https://facebook.com"
+                href="https://twitter.com/demeco2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/90 hover:text-white transition-colors"
+                className="hover:text-white transition-colors"
               >
-                Facebook
-              </a>
-              <a
-                href="mailto:contact@conference.com"
-                className="text-white/90 hover:text-white transition-colors"
-              >
-                Email
+                @demeco2025
               </a>
             </div>
           </div>

@@ -4,15 +4,15 @@ export const organizersDescription = `The event is hosted by the EPFL Bernoulli 
 
 // Reusing speaker profiles for organizers temporarily
 export const organizers: Speaker[] = [
-  {
-    id: "clement-hongler",
-    name: "Clément Hongler",
-    institution: "EPFL",
-    website: "https://www.hongler.org/",
-    image: "/organizers/clement-hongler.jpg",
-    biography:
-      "Professor at EPFL, head of the Chair of Statistical Field Theory.",
-  },
+  // {
+  //   id: "clement-hongler",
+  //   name: "Clément Hongler",
+  //   institution: "EPFL",
+  //   website: "https://www.hongler.org/",
+  //   image: "/organizers/clement-hongler.jpg",
+  //   biography:
+  //     "Professor at EPFL, head of the Chair of Statistical Field Theory.",
+  // },
   {
     id: "vassilis-papadopoulos",
     name: "Vassilis Papadopoulos",

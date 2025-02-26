@@ -28,7 +28,14 @@ export const speakers: Speaker[] = [
   //   website: "https://www.barahudcova.com/",
   //   image: "/speakers/bara-hudcova.jpg",
   // },
-
+  {
+    id: "chan",
+    name: "Bert Chan",
+    institution: "Google",
+    website: "",
+    image: "/speakers/bert-chan.png",
+    biography: "Research Software Engineer at Google DeepMind",
+  },
   {
     id: "jordan-cotler",
     name: "Jordan Cotler",
@@ -65,12 +72,36 @@ export const speakers: Speaker[] = [
     biography: "Assistant Professor at Oslo Metropolitan University.",
   },
   {
+    id: "alexander-mordvintsev",
+    name: "Alexander Mordvintsev",
+    institution: "Google",
+    website: "",
+    image: "/speakers/alexander-mordvintsev.jpeg",
+    biography: "Researcher at Google",
+  },
+  {
     id: "clement-moulin-frier",
     name: "Clément Moulin-Frier",
     institution: "Inria, Bordeaux",
     website: "",
     image: "/speakers/clement-moulin-frier.jpg",
     biography: "Researcher at Flowers lab, Inria, Bordeaux",
+  },
+  {
+    id: "eyvind-niklasson",
+    name: "Eyvind Niklasson",
+    institution: "Google",
+    website: "",
+    image: "/speakers/eyvind-niklasson.png",
+    biography: "Researcher at Google",
+  },
+  {
+    id: "ettore-randazzo",
+    name: "Ettore Randazzo",
+    institution: "Google",
+    website: "",
+    image: "/speakers/ettore-randazzo.png",
+    biography: "Researcher at Google",
   },
   {
     id: "sebastian-risi",

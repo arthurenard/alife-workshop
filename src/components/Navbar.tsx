@@ -10,10 +10,10 @@ const navItems = [
     name: "About",
     to: "abstract",
   },
-  // {
-  //   name: "Program",
-  //   to: "program",
-  // },
+  {
+    name: "Program",
+    to: "program",
+  },
   {
     name: "Speakers",
     to: "speakers",

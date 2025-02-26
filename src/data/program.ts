@@ -4,67 +4,163 @@ import { getSpeakerById } from "./speakers";
 // Fake data
 
 export const program: Record<string, Talk[]> = {
-  // "Day 1": [
-  //   {
-  //     time: "09:00",
-  //     title: "Registration & Coffee",
-  //     date: "May 26, 2025",
-  //     description: "",
-  //     speakerIds: [],
-  //   },
-  //   {
-  //     time: "10:00",
-  //     title: "Opening Keynote: Complexity in Cellular Automata",
-  //     date: "May 26, 2025",
-  //     description:
-  //       "An exploration of emergence and complexity in cellular automata systems, focusing on pattern formation and self-organization.",
-  //     speakerIds: ["clement-hongler"],
-  //   },
-  //   {
-  //     time: "11:30",
-  //     title: "Panel Discussion: Future of AI in Complex Systems",
-  //     date: "May 26, 2025",
-  //     description:
-  //       "A panel discussion on the future role of AI in understanding and developing complex systems.",
-  //     speakerIds: ["vassilis-papadopoulos", "barbora-hudcova"],
-  //   },
-  //   {
-  //     time: "14:00",
-  //     title: "Workshop: Hands-on with Cellular Automata",
-  //     date: "May 26, 2025",
-  //     description:
-  //       "A practical workshop exploring cellular automata and their applications.",
-  //     speakerIds: ["clement-hongler", "barbora-hudcova"],
-  //   },
-  // ],
-  // "Day 2": [
-  //   {
-  //     time: "09:00",
-  //     title: "Keynote: Emergence in Artificial Life",
-  //     date: "May 27, 2025",
-  //     description:
-  //       "Exploring the concept of emergence in artificial life systems.",
-  //     speakerIds: ["barbora-hudcova"],
-  //   },
-  //   {
-  //     time: "11:00",
-  //     title: "Talk: Complexity Measures in AI",
-  //     date: "May 27, 2025",
-  //     description:
-  //       "Discussing various measures of complexity in artificial intelligence.",
-  //     speakerIds: ["vassilis-papadopoulos"],
-  //   },
-  // ],
-  // "Day 3": [
-  //   {
-  //     time: "09:00",
-  //     title: "Closing Keynote: The Future of Complexity Science",
-  //     date: "May 28, 2025",
-  //     description:
-  //       "A look into the future of complexity science and its potential impacts.",
-  //     speakerIds: ["clement-hongler", "vassilis-papadopoulos"],
-  //   },
-  // ],
+  "Day 1": [
+    {
+      time: "10:00",
+      title: "Coffee & Croissants",
+      date: "June 24, 2024",
+      description: "Morning refreshments",
+      speakerIds: [],
+    },
+    {
+      time: "10:20",
+      title: "Morning Session",
+      date: "June 24, 2024",
+      description: "",
+      speakerIds: ["chan"], // Note: Chan is not in speakers.ts, needs to be added
+    },
+    {
+      time: "11:50",
+      title: "Lunch Break",
+      date: "June 24, 2024",
+      description: "",
+      speakerIds: [],
+    },
+    {
+      time: "13:30",
+      title: "Coffee Break",
+      date: "June 24, 2024",
+      description: "",
+      speakerIds: [],
+    },
+    {
+      time: "14:00",
+      title: "Computational Universality and Self-replication",
+      date: "June 24, 2024",
+      description: "",
+      speakerIds: ["jordan-cotler"],
+    },
+    {
+      time: "15:30",
+      title: "Coffee & Pastry",
+      date: "June 24, 2024",
+      description: "",
+      speakerIds: [],
+    },
+    {
+      time: "16:00",
+      title: "Late Afternoon Session",
+      date: "June 24, 2024",
+      description: "",
+      speakerIds: ["sebastian-risi"],
+    },
+  ],
+  "Day 2": [
+    {
+      time: "10:00",
+      title: "Coffee & Croissants",
+      date: "June 25, 2024",
+      description: "Morning refreshments",
+      speakerIds: [],
+    },
+    {
+      time: "10:20",
+      title: "Morning Session",
+      date: "June 25, 2024",
+      description: "",
+      speakerIds: ["clement-moulin-frier"],
+    },
+    {
+      time: "11:50",
+      title: "Lunch Break",
+      date: "June 25, 2024",
+      description: "",
+      speakerIds: [],
+    },
+    {
+      time: "13:30",
+      title: "Coffee Break",
+      date: "June 25, 2024",
+      description: "",
+      speakerIds: [],
+    },
+    {
+      time: "14:00",
+      title: "Early Afternoon Session",
+      date: "June 25, 2024",
+      description: "",
+      speakerIds: ["clement-hongler"],
+    },
+    {
+      time: "15:30",
+      title: "Coffee & Pastry",
+      date: "June 25, 2024",
+      description: "",
+      speakerIds: [],
+    },
+    {
+      time: "16:00",
+      title: "Late Afternoon Session",
+      date: "June 25, 2024",
+      description: "",
+      speakerIds: [
+        "alexander-mordvintsev",
+        "eyvind-niklasson",
+        "ettore-randazzo",
+      ],
+    },
+  ],
+  "Day 3": [
+    {
+      time: "10:00",
+      title: "Coffee & Croissants",
+      date: "June 26, 2024",
+      description: "Morning refreshments",
+      speakerIds: [],
+    },
+    {
+      time: "10:20",
+      title: "Automating the Search for Artificial Life with Foundation Models",
+      date: "June 26, 2024",
+      description: "",
+      speakerIds: ["akarsh-kumar"],
+    },
+    {
+      time: "11:50",
+      title: "Lunch Break",
+      date: "June 26, 2024",
+      description: "",
+      speakerIds: [],
+    },
+    {
+      time: "13:30",
+      title: "Coffee Break",
+      date: "June 26, 2024",
+      description: "",
+      speakerIds: [],
+    },
+    {
+      time: "14:00",
+      title: "Complexity in Biological Neural Networks",
+      date: "June 26, 2024",
+      description: "",
+      speakerIds: ["trym-lindell"],
+    },
+    {
+      time: "15:30",
+      title: "Coffee & Pastry",
+      date: "June 26, 2024",
+      description: "",
+      speakerIds: [],
+    },
+    {
+      time: "16:00",
+      title: "Extended Discussion and Activities",
+      date: "June 26, 2024",
+      description: "Group discussion and collaborative activities",
+      speakerIds: [],
+    },
+  ],
 };
 
 export const getTalkSpeakers = (talk: Talk) => {

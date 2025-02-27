@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function useInactivity(timeout: number = 15000) {
+export function useInactivity(timeout: number = 10000) {
   const [isInactive, setIsInactive] = useState(false);
 
   useEffect(() => {

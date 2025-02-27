@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useRef, useCallback } from "react";
 import { getRandomVideo } from "@/data/videos";
-import { useInactivity } from "@/hooks/useInactivity";
 import { Video } from "@/types";
 
 export default function VideoBackground() {
@@ -10,22 +9,15 @@ export default function VideoBackground() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [scrollOpacity, setScrollOpacity] = useState(0);
-  const isInactive = useInactivity();
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
 
-  // Add scroll handler to update video opacity and scroll state
+  // Add initial delay to show video after 5 seconds
   useEffect(() => {
-    const handleScroll = () => {
-      const viewportHeight = window.innerHeight;
-      const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 0);
-      const opacity = Math.min(scrollPosition / viewportHeight, 1);
-      setScrollOpacity(opacity);
-    };
+    const timer = setTimeout(() => {
+      setShowVideo(true);
+    }, 500);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => clearTimeout(timer);
   }, []);
 
   // Initial video load
@@ -111,20 +103,10 @@ export default function VideoBackground() {
     <div className="fixed top-0 left-0 w-full h-screen -z-10 overflow-hidden bg-black">
       <div
         className={`absolute inset-0 transition-opacity ${
-          isTransitioning
-            ? "duration-1000"
-            : isScrolled
-            ? "duration-100"
-            : "duration-1000"
+          isTransitioning ? "duration-1000" : "duration-1000"
         }`}
         style={{
-          opacity: isTransitioning
-            ? 0
-            : isScrolled
-            ? scrollOpacity
-            : isInactive
-            ? 1
-            : 0,
+          opacity: isTransitioning ? 0 : showVideo ? 1 : 0,
         }}
       >
         <video

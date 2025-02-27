@@ -13,6 +13,7 @@ export interface Talk {
   date: string;
   description: string;
   speakerIds: string[];
+  isBreak?: boolean;
 }
 
 export interface Video {

@@ -1,6 +1,6 @@
 import { Speaker } from "@/types";
 
-export const organizersDescription = `The event is hosted by the EPFL Bernoulli Center, a leading research unit dedicated to advancing the study of complex systems and artificial life. Our organizers are renowned experts in their fields, committed to fostering innovation and collaboration.`;
+export const organizersDescription = ""; // `The event is hosted by the EPFL Bernoulli Center, a leading research unit dedicated to advancing the study of complex systems and artificial life. Our organizers are renowned experts in their fields, committed to fostering innovation and collaboration.`;
 
 // Reusing speaker profiles for organizers temporarily
 export const organizers: Speaker[] = [

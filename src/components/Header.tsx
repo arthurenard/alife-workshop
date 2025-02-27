@@ -42,7 +42,7 @@ export default function Header() {
           <div className="relative h-48 w-48 sm:h-80 sm:w-80 mx-auto mb-12">
             <Image
               src="/logo.png"
-              alt="Alife Workshop Logo"
+              alt="Workshop Logo"
               fill
               className="object-contain"
               priority
@@ -73,12 +73,6 @@ export default function Header() {
               >
                 Detection and Emergence of Complexity
               </h1>
-              <p className="text-2xl md:text-3xl mb-4 text-gray-200">
-                ALIFE Perspectives
-              </p>
-              <p className="text-lg md:text-2xl mb-8">
-                May 26-28, 2025 • EPFL, Lausanne
-              </p>
             </div>
           </div>
           <motion.div
@@ -86,6 +80,18 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
+            <div
+              className={`duration-300 transition-all ${
+                isInactive && !isScrolled ? "opacity-0" : "opacity-100"
+              }`}
+            >
+              <p className="text-2xl md:text-3xl mb-4 text-gray-200">
+                Artificial Life Perspectives
+              </p>
+              <p className="text-lg md:text-2xl mb-8">
+                May 26-28, 2025 • EPFL, Lausanne
+              </p>
+            </div>
             <Link
               to="abstract"
               spy={true}

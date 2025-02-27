@@ -18,7 +18,7 @@ export default function Abstract() {
           <h2 className="text-3xl font-bold mb-8 text-center text-white">
             Conference Abstract
           </h2>
-          <div className="text-white/90 space-y-6">
+          <div className="text-white/90 space-y-6 text-justify">
             <p>{abstractDescription}</p>
             <div className="bg-black/30 backdrop-blur-sm p-4 rounded-lg flex justify-center">
               <div className="relative w-full h-64 sm:h-96">

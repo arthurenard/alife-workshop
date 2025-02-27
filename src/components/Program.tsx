@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Talk, Speaker } from "@/types";
 import ProgramSlotModal from "./ProgramSlotModal";
@@ -61,42 +61,76 @@ export default function Program({ onTalkClick }: ProgramProps) {
             ))}
           </div>
 
-          <div className="">
-            {program[activeDay]?.map((talk, index) => (
-              <div
-                key={index}
-                className="w-full border-b border-white/10 last:border-b-0 sm:py-4 py-2 last:pb-0 last:my-0"
+          <div className="relative overflow-visible">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeDay}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.3 }}
+                className="w-full"
               >
-                <motion.button
-                  onClick={() =>
-                    talk.speakerIds.length > 0 && onTalkClick(talk)
-                  }
-                  className={`w-full flex rounded-xl items-start py-4 text-left px-2 bg-black/20 backdrop-blur-xl hover:bg-white/10 ${
-                    talk.speakerIds.length > 0
-                      ? "cursor-pointer transition-all transition-colors duration-300 ease-in-out hover:scale-[102%]"
-                      : "cursor-default"
-                  }`}
-                >
-                  <div className="w-16 flex-shrink-0 text-white/60">
-                    {talk.time}
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">{talk.title}</h3>
-                    <div className="flex flex-wrap gap-x-2">
-                      {getTalkSpeakers(talk).map((speaker, idx) => (
-                        <p
-                          key={idx}
-                          className="text-white/80 text-sm whitespace-nowrap"
+                {program[activeDay]?.map((talk, index) => (
+                  <div
+                    key={index}
+                    className="w-full border-b border-white/10 last:border-b-0 sm:py-4 py-2 last:pb-0 last:my-0"
+                    style={{ zIndex: program[activeDay].length - index }}
+                  >
+                    <motion.button
+                      onClick={() =>
+                        talk.speakerIds.length > 0 && onTalkClick(talk)
+                      }
+                      whileHover={
+                        talk.speakerIds.length > 0
+                          ? { scale: 1.02, zIndex: 10 }
+                          : {}
+                      }
+                      transition={{ duration: 0.3 }}
+                      className={`w-full flex rounded-xl items-start py-4 text-left px-2 relative
+                        ${
+                          talk.isBreak
+                            ? "bg-black/20 backdrop-blur-xl"
+                            : "bg-black/30 backdrop-blur-xl hover:bg-black/40"
+                        }
+                        ${
+                          talk.speakerIds.length > 0
+                            ? "cursor-pointer transition-colors duration-300 ease-in-out"
+                            : "cursor-default"
+                        }`}
+                    >
+                      <div className="w-16 flex-shrink-0 text-white/60">
+                        {talk.time}
+                      </div>
+                      <div>
+                        <h3
+                          className={`font-semibold ${
+                            !talk.isBreak ? "text-white" : "text-white/70"
+                          }`}
                         >
-                          {speaker?.name}
-                          {idx < getTalkSpeakers(talk).length - 1 && ","}
-                        </p>
-                      ))}
-                    </div>
+                          {talk.title}
+                        </h3>
+                        <div className="flex flex-wrap gap-x-2">
+                          {getTalkSpeakers(talk).map((speaker, idx) => (
+                            <p
+                              key={idx}
+                              className={`text-sm whitespace-nowrap ${
+                                !talk.isBreak
+                                  ? "text-white/90"
+                                  : "text-white/60"
+                              }`}
+                            >
+                              {speaker?.name}
+                              {idx < getTalkSpeakers(talk).length - 1 && ","}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.button>
                   </div>
-                </motion.button>
-              </div>
-            ))}
+                ))}
+              </motion.div>
+            </AnimatePresence>
           </div>
         </motion.div>
       </div>

@@ -58,6 +58,24 @@ export const metadata: Metadata = {
   verification: {
     google: "your-google-site-verification-code", // You'll need to add this
   },
+  icons: {
+    icon: [
+      {
+        url: "/favicons/favicon-16x16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+      {
+        url: "/favicons/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+    ],
+    apple: {
+      url: "/favicons/apple-touch-icon.png",
+      sizes: "180x180",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -70,6 +88,20 @@ export default function RootLayout({
       <head>
         <link rel="canonical" href="https://dem.eco" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          rel="icon"
+          href="/favicons/favicon-16x16.png"
+          sizes="16x16"
+          type="image/png"
+        />
+        <link
+          rel="icon"
+          href="/favicons/favicon-32x32.png"
+          sizes="32x32"
+          type="image/png"
+        />
+        <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
+        <link rel="manifest" href="/favicons/site.webmanifest" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

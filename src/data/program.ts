@@ -11,6 +11,7 @@ export const program: Record<string, Talk[]> = {
       date: "May 26, 2025",
       description: "Morning refreshments",
       speakerIds: [],
+      isBreak: true,
     },
     {
       time: "10:20",
@@ -18,20 +19,15 @@ export const program: Record<string, Talk[]> = {
       date: "May 26, 2025",
       description: "",
       speakerIds: ["bert-chan"], // Note: Chan is not in speakers.ts, needs to be added
+      isBreak: false,
     },
     {
       time: "11:50",
-      title: "Lunch Break",
+      title: "Lunch Break & Coffee",
       date: "May 26, 2025",
       description: "",
       speakerIds: [],
-    },
-    {
-      time: "13:30",
-      title: "Coffee Break",
-      date: "May 26, 2025",
-      description: "",
-      speakerIds: [],
+      isBreak: true,
     },
     {
       time: "14:00",
@@ -39,6 +35,7 @@ export const program: Record<string, Talk[]> = {
       date: "May 26, 2025",
       description: "",
       speakerIds: ["jordan-cotler"],
+      isBreak: false,
     },
     {
       time: "15:30",
@@ -46,6 +43,7 @@ export const program: Record<string, Talk[]> = {
       date: "May 26, 2025",
       description: "",
       speakerIds: [],
+      isBreak: true,
     },
     {
       time: "16:00",
@@ -53,6 +51,7 @@ export const program: Record<string, Talk[]> = {
       date: "May 26, 2025",
       description: "",
       speakerIds: ["sebastian-risi"],
+      isBreak: false,
     },
   ],
   "Day 2": [
@@ -62,6 +61,7 @@ export const program: Record<string, Talk[]> = {
       date: "May 27, 2025",
       description: "Morning refreshments",
       speakerIds: [],
+      isBreak: true,
     },
     {
       time: "10:20",
@@ -69,20 +69,15 @@ export const program: Record<string, Talk[]> = {
       date: "May 27, 2025",
       description: "",
       speakerIds: ["clement-moulin-frier"],
+      isBreak: false,
     },
     {
       time: "11:50",
-      title: "Lunch Break",
+      title: "Lunch Break & Coffee",
       date: "May 27, 2025",
       description: "",
       speakerIds: [],
-    },
-    {
-      time: "13:30",
-      title: "Coffee Break",
-      date: "May 27, 2025",
-      description: "",
-      speakerIds: [],
+      isBreak: true,
     },
     {
       time: "14:00",
@@ -90,6 +85,7 @@ export const program: Record<string, Talk[]> = {
       date: "May 27, 2025",
       description: "",
       speakerIds: ["clement-hongler"],
+      isBreak: false,
     },
     {
       time: "15:30",
@@ -97,6 +93,7 @@ export const program: Record<string, Talk[]> = {
       date: "May 27, 2025",
       description: "",
       speakerIds: [],
+      isBreak: true,
     },
     {
       time: "16:00",
@@ -108,6 +105,15 @@ export const program: Record<string, Talk[]> = {
         "eyvind-niklasson",
         "ettore-randazzo",
       ],
+      isBreak: false,
+    },
+    {
+      time: "19:00",
+      title: "Conference Dinner",
+      date: "May 27, 2025",
+      description: "Networking and social event",
+      speakerIds: [],
+      isBreak: true,
     },
   ],
   "Day 3": [
@@ -117,6 +123,7 @@ export const program: Record<string, Talk[]> = {
       date: "May 28, 2025",
       description: "Morning refreshments",
       speakerIds: [],
+      isBreak: true,
     },
     {
       time: "10:20",
@@ -124,20 +131,15 @@ export const program: Record<string, Talk[]> = {
       date: "May 28, 2025",
       description: "",
       speakerIds: ["akarsh-kumar"],
+      isBreak: false,
     },
     {
       time: "11:50",
-      title: "Lunch Break",
+      title: "Lunch Break & Coffee",
       date: "May 28, 2025",
       description: "",
       speakerIds: [],
-    },
-    {
-      time: "13:30",
-      title: "Coffee Break",
-      date: "May 28, 2025",
-      description: "",
-      speakerIds: [],
+      isBreak: true,
     },
     {
       time: "14:00",
@@ -145,6 +147,7 @@ export const program: Record<string, Talk[]> = {
       date: "May 28, 2025",
       description: "",
       speakerIds: ["trym-lindell"],
+      isBreak: false,
     },
     {
       time: "15:30",
@@ -152,6 +155,7 @@ export const program: Record<string, Talk[]> = {
       date: "May 28, 2025",
       description: "",
       speakerIds: [],
+      isBreak: true,
     },
     {
       time: "16:00",
@@ -159,6 +163,7 @@ export const program: Record<string, Talk[]> = {
       date: "May 28, 2025",
       description: "Group discussion and collaborative activities",
       speakerIds: [],
+      isBreak: false,
     },
   ],
 };

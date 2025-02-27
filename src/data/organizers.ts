@@ -19,6 +19,8 @@ export const organizers: Speaker[] = [
     institution: "EPFL",
     website: "https://vassi.life/",
     image: "/organizers/vassilis-papadopoulos.jpg",
+    biography:
+      "I am a theoretical physicist, now working on more applied aspects of Artificial Life. I am particularly interested in developing methods that allow to generate interesting dynamics at scale (probably using machine learning, but not necessarily!).",
   },
   {
     id: "barbora-hudcova",

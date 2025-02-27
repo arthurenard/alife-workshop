@@ -14,3 +14,9 @@ export interface Talk {
   description: string;
   speakerIds: string[];
 }
+
+export interface Video {
+  id: string;
+  src: string;
+  type: string;
+}

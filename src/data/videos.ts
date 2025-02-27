@@ -1,31 +1,38 @@
-export const backgroundVideos = [
-  // {
-  //   id: "video1",
-  //   src: "/bg_video_1.mp4",
-  //   type: "video/mp4",
-  // },
-  // {
-  //   id: "video9",
-  //   src: "/bg_video_9.mp4",
-  //   type: "video/mp4",
-  // },
-  {
-    id: "cmprs_v1",
-    src: "videos/cmprs_bg_1.webm",
-    type: "video/webm",
-  },
-  {
-    id: "cmprs_v9",
-    src: "videos/cmprs_bg_9.webm",
-    type: "video/webm",
-  },
-];
+import { Video } from "@/types";
 
-export const getRandomVideo = (excludeId?: string) => {
-  const availableVideos = excludeId
-    ? backgroundVideos.filter((video) => video.id !== excludeId)
-    : backgroundVideos;
+// Get a random video excluding the one with the given ID
+export const getRandomVideo = async (
+  excludeId?: string
+): Promise<Video | null> => {
+  console.log("Getting random video, excluding:", excludeId);
 
-  const randomIndex = Math.floor(Math.random() * availableVideos.length);
-  return availableVideos[randomIndex];
+  try {
+    // Fetch videos from API
+    const response = await fetch("/api/videos");
+    if (!response.ok) {
+      throw new Error(`Failed to fetch videos: ${response.status}`);
+    }
+
+    const videos: Video[] = await response.json();
+    console.log("Videos fetched successfully:", videos);
+
+    // Filter out the excluded video
+    const availableVideos = excludeId
+      ? videos.filter((video) => video.id !== excludeId)
+      : videos;
+
+    if (availableVideos.length === 0) {
+      console.log("No available videos");
+      return null;
+    }
+
+    // Select a random video
+    const randomIndex = Math.floor(Math.random() * availableVideos.length);
+    const selectedVideo = availableVideos[randomIndex];
+    console.log("Selected video:", selectedVideo);
+    return selectedVideo;
+  } catch (error) {
+    console.error("Error fetching videos:", error);
+    return null;
+  }
 };

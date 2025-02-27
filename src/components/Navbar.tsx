@@ -101,7 +101,7 @@ export default function Navbar() {
                     smooth={false}
                     offset={-96}
                     duration={100}
-                    className="cursor-pointer px-4 py-2 text-base font-semibold text-white/90 hover:text-white hover:scale-105 transition-all transition-colors duration-300 ease-in-out"
+                    className="cursor-pointer px-4 py-2 text-base font-semibold text-white/90 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
                   >
                     {item.name}
                   </Link>

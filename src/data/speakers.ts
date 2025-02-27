@@ -29,7 +29,7 @@ export const speakers: Speaker[] = [
   //   image: "/speakers/bara-hudcova.jpg",
   // },
   {
-    id: "chan",
+    id: "bert-chan",
     name: "Bert Chan",
     institution: "Google",
     website: "",

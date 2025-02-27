@@ -14,10 +14,10 @@ export const program: Record<string, Talk[]> = {
     },
     {
       time: "10:20",
-      title: "Morning Session",
+      title: "Complex Patterns in Lenia",
       date: "June 24, 2024",
       description: "",
-      speakerIds: ["chan"], // Note: Chan is not in speakers.ts, needs to be added
+      speakerIds: ["bert-chan"], // Note: Chan is not in speakers.ts, needs to be added
     },
     {
       time: "11:50",

@@ -59,7 +59,7 @@ export default function Footer() {
           <p className="mt-2">
             Developed by{" "}
             <a
-              href="https://www.linkedin.com/in/arthur-renard-3211471b6/"
+              href="https://www.arthurenard.me/"
               className="hover:text-white transition-colors"
               target="_blank"
               rel="noopener noreferrer"

@@ -109,7 +109,7 @@ export const program: Record<string, Talk[]> = {
     },
     {
       time: "19:00",
-      title: "Conference Dinner",
+      title: "Speaker Dinner",
       date: "May 27, 2025",
       description: "Networking and social event",
       speakerIds: [],

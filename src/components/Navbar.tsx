@@ -11,6 +11,10 @@ const navItems = [
     to: "abstract",
   },
   {
+    name: "How to Participate",
+    to: "how-to-participate",
+  },
+  {
     name: "Program",
     to: "program",
   },

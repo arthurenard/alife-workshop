@@ -53,7 +53,7 @@ export default function ProfileModal({
             <h3 className="text-xl font-semibold mb-4">Biography</h3>
             <div className="space-y-4 mb-8">
               <div className="p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all">
-                <p className="text-white/90">{person.biography}</p>
+                <p className="text-white/90 whitespace-pre-wrap">{person.biography}</p>
               </div>
             </div>
           </>

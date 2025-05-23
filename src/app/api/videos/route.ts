@@ -7,12 +7,21 @@ export async function GET() {
   try {
     const files = fs.readdirSync(videosDirectory);
     const videos = files
-      .filter((file) => file.endsWith(".webm"))
-      .map((file) => ({
-        id: file.replace(".webm", ""),
-        src: `videos/${file}`,
-        type: "video/webm",
-      }));
+      .filter((file) => {
+        // Only include files (not directories) and filter to video formats
+        const filePath = path.join(videosDirectory, file);
+        return fs.statSync(filePath).isFile() && (file.endsWith(".webm") || file.endsWith(".mp4"));
+      })
+      .map((file) => {
+        const fileType = file.endsWith(".mp4") ? "video/mp4" : "video/webm";
+        const fileId = file.replace(/\.(webm|mp4)$/, "");
+        
+        return {
+          id: fileId,
+          src: `videos/${file}`,
+          type: fileType,
+        };
+      });
     return NextResponse.json(videos);
   } catch (error) {
     console.error("Error reading videos directory:", error);

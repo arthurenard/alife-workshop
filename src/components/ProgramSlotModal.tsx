@@ -29,7 +29,7 @@ export default function ProgramSlotModal({
       <div className="text-white">
         <h2 className="text-2xl font-bold mb-2">{title}</h2>
         <p className="text-white/60 mb-6">{date}</p>
-        <p className="text-white/80 mb-8 line-clamp-2">{description}</p>
+        <p className="text-white/80 mb-8 whitespace-pre-wrap text-justify">{description}</p>
 
         {speakers.length > 0 && (
           <>

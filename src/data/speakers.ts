@@ -28,6 +28,7 @@ export const speakers: Speaker[] = [
   //   website: "https://www.barahudcova.com/",
   //   image: "/speakers/bara-hudcova.jpg",
   // },
+
   {
     id: "bert-chan",
     name: "Bert Chan",
@@ -43,6 +44,14 @@ export const speakers: Speaker[] = [
     website: "",
     image: "/speakers/jordan-cotler.jpeg",
     biography: "Assistant Professor at Harvard University",
+  },
+  {
+    id: "mayalen-etcheverry",
+    name: "Mayalen Etcheverry",
+    institution: "Google",
+    website: "",
+    image: "/speakers/mayalen-etcheverry.png",
+    biography: "Researcher at Google",
   },
   {
     id: "clement-hongler",

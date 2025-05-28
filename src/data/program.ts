@@ -167,10 +167,16 @@ export const program: Record<string, Talk[]> = {
     },
     {
       time: "10:20",
-      title: "Automating the Search for Artificial Life with Foundation Models",
+title: "Complexity in Biological Neural Networks",
       date: "May 28, 2025",
-      description: "",
-      speakerIds: ["akarsh-kumar"],
+      description: `The brain is perhaps the most complex system we know of. This complexity reaches across all levels of organization, from the internal workings of neurons to large scale brain networks. It also extends to the dynamics of biological neural networks which can display a wide range of complex patterns. 
+However, this complexity can also break down which is associated with different clinical outcomes and can reduce information processing capacities.
+
+Thus, neuroscientists and psychologists have an increasing interest in studying the brain from a complexity perspective, both motivated by scientific curiosity and the potential of better understanding clinical disorders. Therefor a wide range of methods to study and measure complexity in the brain and other forms of biological neural networks have been adopted.
+
+This talk will give an overview of some of the main families of methods and perspectives used to study complexity in brain with a focus on criticality, complex network science and consciousness measures like integrated information.`,
+      speakerIds: ["trym-lindell"],
+      
       isBreak: false,
     },
     {
@@ -183,15 +189,10 @@ export const program: Record<string, Talk[]> = {
     },
     {
       time: "14:00",
-      title: "Complexity in Biological Neural Networks",
+      title: "Automating the Search for Artificial Life with Foundation Models",
       date: "May 28, 2025",
-      description: `The brain is perhaps the most complex system we know of. This complexity reaches across all levels of organization, from the internal workings of neurons to large scale brain networks. It also extends to the dynamics of biological neural networks which can display a wide range of complex patterns. 
-However, this complexity can also break down which is associated with different clinical outcomes and can reduce information processing capacities.
-
-Thus, neuroscientists and psychologists have an increasing interest in studying the brain from a complexity perspective, both motivated by scientific curiosity and the potential of better understanding clinical disorders. Therefor a wide range of methods to study and measure complexity in the brain and other forms of biological neural networks have been adopted.
-
-This talk will give an overview of some of the main families of methods and perspectives used to study complexity in brain with a focus on criticality, complex network science and consciousness measures like integrated information.`,
-      speakerIds: ["trym-lindell"],
+      description: "",
+      speakerIds: ["akarsh-kumar"],
       isBreak: false,
     },
     {
